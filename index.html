@@ -4,28 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terminal CV</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Select Interface | Portfolio</title>
+    <link rel="stylesheet" href="landing.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Fira+Code:wght@500&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <div class="terminal">
-        <div class="terminal">
-            <div id="boot-sequence"></div>
-            <div class="terminal-body" id="terminal-body" style="display: none;">
-                <div class="output">
-                    <p>Welcome to my Terminal CV v1.0.0</p>
-                    <p>Type <span class="command">help</span> to see available commands.</p>
-                    <br>
+    <div class="container">
+        <h1 class="main-title">Choose Your Experience</h1>
+        <div class="cards-container">
+            <a href="terminal.html" class="card terminal-card">
+                <div class="card-content">
+                    <div class="icon">_</div>
+                    <h2>Terminal</h2>
+                    <p>For the geeks & developers.</p>
+                    <div class="fake-code">
+                        <span class="prompt">$</span> ./start_cv.sh<br>
+                        <span class="output">Loading...</span>
+                    </div>
                 </div>
-                <div class="input-line">
-                    <span class="prompt">user@github-cv:~$</span>
-                    <input type="text" id="command-input" autocomplete="off">
+            </a>
+            <a href="modern.html" class="card gui-card">
+                <div class="card-content">
+                    <div class="icon">UI</div>
+                    <h2>Modern GUI</h2>
+                    <p>For the designers & humans.</p>
+                    <div class="fake-ui">
+                        <div class="ui-bar"></div>
+                        <div class="ui-content"></div>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
-    <script src="script.js"></script>
 </body>
 
 </html>
