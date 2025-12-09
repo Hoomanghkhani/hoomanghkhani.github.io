@@ -4,40 +4,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select Interface | Portfolio</title>
-    <link rel="stylesheet" href="landing.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Fira+Code:wght@500&display=swap"
+    <title>Hooman | Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="main-title">Choose Your Experience</h1>
-        <div class="cards-container">
-            <a href="terminal.html" class="card terminal-card">
-                <div class="card-content">
-                    <div class="icon">_</div>
-                    <h2>Terminal</h2>
-                    <p>For the geeks & developers.</p>
-                    <div class="fake-code">
-                        <span class="prompt">$</span> ./start_cv.sh<br>
-                        <span class="output">Loading...</span>
-                    </div>
+    <div class="bento-container">
+        <!-- Profile Card (Large) -->
+        <div class="card profile-card">
+            <div class="profile-header">
+                <div class="profile-pic-container">
+                    <div class="profile-pic-placeholder">H</div>
                 </div>
-            </a>
-            <a href="modern.html" class="card gui-card">
-                <div class="card-content">
-                    <div class="icon">UI</div>
-                    <h2>Modern GUI</h2>
-                    <p>For the designers & humans.</p>
-                    <div class="fake-ui">
-                        <div class="ui-bar"></div>
-                        <div class="ui-content"></div>
-                    </div>
+                <div class="status-badge">
+                    <span class="pulse"></span> Available for work
                 </div>
+            </div>
+            <div class="profile-info">
+                <h1>Hooman</h1>
+                <p class="role">Full Stack Developer</p>
+                <p class="bio">Building digital experiences that matter. Obsessed with performance, clean code, and
+                    intuitive design.</p>
+            </div>
+        </div>
+
+        <!-- Social Links (Small) -->
+        <a href="https://github.com/hoomanghkhani" target="_blank" class="card social-card github">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="#" target="_blank" class="card social-card linkedin">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="#" target="_blank" class="card social-card twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+
+        <!-- Location / Map (Medium) -->
+        <div class="card map-card">
+            <div class="map-bg"></div>
+            <div class="location-pin">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Tehran, Iran</span>
+            </div>
+            <div class="local-time" id="local-time">--:--</div>
+        </div>
+
+        <!-- Tech Stack (Wide) -->
+        <div class="card stack-card">
+            <h2>Tech Stack</h2>
+            <div class="marquee-container">
+                <div class="marquee-content">
+                    <span><i class="fab fa-react"></i> React</span>
+                    <span><i class="fab fa-js"></i> JavaScript</span>
+                    <span><i class="fab fa-python"></i> Python</span>
+                    <span><i class="fab fa-node"></i> Node.js</span>
+                    <span><i class="fab fa-docker"></i> Docker</span>
+                    <span><i class="fab fa-git-alt"></i> Git</span>
+                    <span><i class="fas fa-database"></i> SQL</span>
+                    <span><i class="fab fa-html5"></i> HTML5</span>
+                    <span><i class="fab fa-css3-alt"></i> CSS3</span>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="marquee-content" aria-hidden="true">
+                    <span><i class="fab fa-react"></i> React</span>
+                    <span><i class="fab fa-js"></i> JavaScript</span>
+                    <span><i class="fab fa-python"></i> Python</span>
+                    <span><i class="fab fa-node"></i> Node.js</span>
+                    <span><i class="fab fa-docker"></i> Docker</span>
+                    <span><i class="fab fa-git-alt"></i> Git</span>
+                    <span><i class="fas fa-database"></i> SQL</span>
+                    <span><i class="fab fa-html5"></i> HTML5</span>
+                    <span><i class="fab fa-css3-alt"></i> CSS3</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 1 (Medium) -->
+        <div class="card project-card p1">
+            <div class="project-content">
+                <h3>Portfolio V1</h3>
+                <p>My previous portfolio iteration.</p>
+                <div class="tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                </div>
+            </div>
+            <div class="project-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
+        </div>
+
+        <!-- Project 2 (Medium) -->
+        <div class="card project-card p2">
+            <div class="project-content">
+                <h3>E-Commerce</h3>
+                <p>Full stack shopping platform.</p>
+                <div class="tags">
+                    <span>Next.js</span>
+                    <span>Stripe</span>
+                </div>
+            </div>
+            <div class="project-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
+        </div>
+
+        <!-- Contact (Wide/Medium) -->
+        <div class="card contact-card-main">
+            <h2>Let's work together</h2>
+            <p>Have a project in mind?</p>
+            <a href="mailto:contact@example.com" class="email-btn">
+                contact@example.com <i class="far fa-copy"></i>
             </a>
         </div>
+
+        <!-- Experience/Stats (Tall or Small) -->
+        <div class="card stats-card">
+            <div class="stat-item">
+                <span class="number">3+</span>
+                <span class="label">Years Exp.</span>
+            </div>
+            <div class="stat-item">
+                <span class="number">20+</span>
+                <span class="label">Projects</span>
+            </div>
+        </div>
+
+        <!-- Dark Mode Toggle (Small) -->
+        <div class="card theme-card" id="theme-toggle">
+            <i class="fas fa-moon"></i>
+        </div>
+
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
