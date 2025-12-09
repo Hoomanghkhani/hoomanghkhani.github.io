@@ -4,188 +4,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hooman | Developer Portfolio</title>
+    <title>Hooman | DevOps & SRE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Flag Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css" />
 </head>
 
 <body>
-    <!-- Language Switcher -->
-    <div class="lang-switcher">
-        <button class="lang-btn active" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="fa">فارسی</button>
-        <button class="lang-btn" data-lang="de">DE</button>
-    </div>
 
-    <div class="bento-container">
-        <!-- Profile Card (Large) -->
-        <div class="card profile-card">
-            <div class="profile-header">
-                <div class="profile-pic-container">
-                    <div class="profile-pic-placeholder">H</div>
-                </div>
-                <div class="status-badge">
-                    <span class="pulse"></span> <span class="status-text">On Call</span>
-                </div>
-            </div>
-            <div class="profile-info">
-                <h1>Hooman</h1>
-                <p class="role">DevOps Engineer | SRE</p>
-                <p class="bio">Bridging Development & Operations. Building reliable, scalable, and automated
-                    infrastructure.</p>
-            </div>
+    <!-- Background Elements -->
+    <div class="bg-gradient"></div>
+    <div class="bg-mesh"></div>
+
+    <!-- Navigation / Language -->
+    <nav class="navbar">
+        <div class="nav-logo">HG.</div>
+        <div class="lang-dropdown-container">
+            <button class="lang-toggle" id="lang-toggle">
+                <span class="fi fi-gb"></span> <span class="current-lang-text">English</span> <i
+                    class="fas fa-chevron-down"></i>
+            </button>
+            <ul class="lang-menu" id="lang-menu">
+                <li data-lang="en"><span class="fi fi-gb"></span> English</li>
+                <li data-lang="fa"><span class="fi fi-ir"></span> فارسی</li>
+                <li data-lang="de"><span class="fi fi-de"></span> Deutsch</li>
+            </ul>
         </div>
+    </nav>
 
-        <!-- Social Links (Small) -->
-        <a href="https://github.com/hoomanghkhani" target="_blank" class="card social-card github">
-            <i class="fab fa-github"></i>
-        </a>
-        <a href="#" target="_blank" class="card social-card linkedin">
-            <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="#" target="_blank" class="card social-card twitter">
-            <i class="fab fa-twitter"></i>
-        </a>
+    <main class="grid-container">
 
-        <!-- Terminal / Uptime Card (Medium - Replaces Map) -->
-        <div class="terminal-card-mini">
-            <div class="terminal-header">
-                <span class="terminal-title">System Status</span>
-                <div class="indicators">
-                    <div class="dot red"></div>
-                    <div class="dot yellow"></div>
-                    <div class="dot green"></div>
+        <!-- Hero / Profile -->
+        <div class="card hero-card">
+            <div class="hero-content">
+                <div class="badge-container">
+                    <span class="badge status-badge"><span class="dot green"></span> Available for Projects</span>
+                    <span class="badge role-badge">DevOps | SRE</span>
+                </div>
+                <h1 class="hero-title" data-key="hero_title">Architecting <br> <span class="txt-gradient">Scalable
+                        Systems</span></h1>
+                <p class="hero-bio" data-key="hero_bio">
+                    I bridge the gap between complex development and reliable operations. Specializing in Automation,
+                    Cloud Infrastructure, and Observability.
+                </p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary" data-key="btn_contact">Contact Me <i
+                            class="fas fa-arrow-right"></i></a>
+                    <a href="#" class="btn btn-secondary" data-key="btn_resume">Download CV <i
+                            class="fas fa-download"></i></a>
                 </div>
             </div>
-            <div class="terminal-body">
-                <div class="line">
-                    <span class="cmd">$ <span class="cmd-text">systemctl status</span></span>
-                </div>
-                <div class="status-row">
-                    <span class="status-label">Service Mesh</span>
-                    <span class="status-value">Active</span>
-                </div>
-                <div class="status-row">
-                    <span class="status-label">Latency (p99)</span>
-                    <span class="status-value">24ms</span>
-                </div>
-                <div class="line" style="margin-top: 8px;">
-                    <span class="status-label">Load avg</span>
-                </div>
-                <div class="uptime-graph">
-                    <!-- 20 Bars for visual density -->
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
+            <div class="hero-visual">
+                <!-- Abstract 3D-like CSS Element -->
+                <div class="cube-wrapper">
+                    <div class="cube">
+                        <div class="face front"><i class="fab fa-docker"></i></div>
+                        <div class="face back"><i class="fas fa-server"></i></div>
+                        <div class="face right"><i class="fas fa-dharmachakra"></i></div>
+                        <div class="face left"><i class="fab fa-aws"></i></div>
+                        <div class="face top"><i class="fab fa-linux"></i></div>
+                        <div class="face bottom"><i class="fas fa-code"></i></div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Tech Stack (Wide) -->
+        <!-- Tech Stack -->
         <div class="card stack-card">
-            <h2>Observability Stack</h2>
-            <div class="marquee-container">
-                <div class="marquee-content">
-                    <span><i class="fas fa-fire"></i> Prometheus</span>
-                    <span><i class="fas fa-chart-area"></i> Grafana</span>
-                    <span><i class="fab fa-docker"></i> Docker</span>
-                    <span><i class="fas fa-dharmachakra"></i> K8s</span>
-                    <span><i class="fas fa-server"></i> Terraform</span>
-                    <span><i class="fab fa-linux"></i> Linux</span>
-                    <span><i class="fab fa-python"></i> Python</span>
-                    <span><i class="fas fa-search"></i> ELK Stack</span>
-                    <span><i class="fab fa-aws"></i> AWS</span>
-                </div>
-                <!-- Duplicate for seamless loop -->
-                <div class="marquee-content" aria-hidden="true">
-                    <span><i class="fas fa-fire"></i> Prometheus</span>
-                    <span><i class="fas fa-chart-area"></i> Grafana</span>
-                    <span><i class="fab fa-docker"></i> Docker</span>
-                    <span><i class="fas fa-dharmachakra"></i> K8s</span>
-                    <span><i class="fas fa-server"></i> Terraform</span>
-                    <span><i class="fab fa-linux"></i> Linux</span>
-                    <span><i class="fab fa-python"></i> Python</span>
-                    <span><i class="fas fa-search"></i> ELK Stack</span>
-                    <span><i class="fab fa-aws"></i> AWS</span>
-                </div>
+            <h3 data-key="stack_title">Technologies</h3>
+            <div class="stack-grid">
+                <div class="tech-item"><i class="fab fa-aws"></i> AWS</div>
+                <div class="tech-item"><i class="fab fa-docker"></i> Docker</div>
+                <div class="tech-item"><i class="fas fa-dharmachakra"></i> K8s</div>
+                <div class="tech-item"><i class="fab fa-linux"></i> Linux</div>
+                <div class="tech-item"><i class="fas fa-server"></i> Terraform</div>
+                <div class="tech-item"><i class="fas fa-shoe-prints"></i> Ansible</div>
+                <div class="tech-item"><i class="fab fa-python"></i> Python</div>
+                <div class="tech-item"><i class="fab fa-golang"></i> Go</div>
+                <div class="tech-item"><i class="fas fa-chart-line"></i> Grafana</div>
+                <div class="tech-item"><i class="fab fa-jenkins"></i> Jenkins</div>
             </div>
         </div>
 
-        <!-- Project 1 (Medium) -->
-        <div class="card project-card p1">
-            <div class="project-content">
-                <h3>K8s Cluster</h3>
-                <p>Bare-metal HA Setup</p>
-                <div class="tags">
-                    <span>Kubeadm</span>
-                    <span>Ansible</span>
+        <!-- Experience Timeline -->
+        <div class="card exp-card">
+            <h3 data-key="exp_title">Experience</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="tl-date">2023 - Present</div>
+                    <div class="tl-content">
+                        <h4 data-key="job1_title">Senior DevOps Engineer</h4>
+                        <span class="company">Tech Corp</span>
+                        <p data-key="job1_desc">Leading cloud migration and implementing GitOps workflows.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="project-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
-        </div>
-
-        <!-- Project 2 (Medium) -->
-        <div class="card project-card p2">
-            <div class="project-content">
-                <h3>GitOps Pipe</h3>
-                <p>ArgoCD & Helm Charts</p>
-                <div class="tags">
-                    <span>GitLab CI</span>
-                    <span>ArgoCD</span>
+                <div class="timeline-item">
+                    <div class="tl-date">2021 - 2023</div>
+                    <div class="tl-content">
+                        <h4 data-key="job2_title">SRE Specialist</h4>
+                        <span class="company">Data Systems</span>
+                        <p data-key="job2_desc">Improved system uptime to 99.99% and optimized monitoring.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-date">2019 - 2021</div>
+                    <div class="tl-content">
+                        <h4 data-key="job3_title">Linux Administrator</h4>
+                        <span class="company">WebHosts Inc</span>
+                        <p data-key="job3_desc">Managed over 500+ Linux servers and automated patching.</p>
+                    </div>
                 </div>
             </div>
-            <div class="project-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
         </div>
 
-        <!-- Contact (Wide/Medium) -->
-        <div class="card contact-card-main">
-            <h2>Ping Me</h2>
-            <p>Ready for the next incident?</p>
-            <a href="mailto:contact@example.com" class="email-btn">
-                contact@example.com
-            </a>
+        <!-- Certifications -->
+        <div class="card cert-card">
+            <h3 data-key="cert_title">Certifications</h3>
+            <ul class="cert-list">
+                <li>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Ansible_logo.svg/1200px-Ansible_logo.svg.png"
+                        alt="Ansible" class="cert-icon">
+                    <div>
+                        <strong>CKA</strong>
+                        <span>Certified Kubernetes Admin</span>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
+                        alt="AWS" class="cert-icon">
+                    <div>
+                        <strong>AWS SAA</strong>
+                        <span>Solutions Architect Assoc.</span>
+                    </div>
+                </li>
+            </ul>
         </div>
 
-        <!-- Experience/Stats (Tall or Small) -->
-        <div class="card stats-card">
-            <div class="stat-item">
-                <span class="number">5+</span>
-                <span class="label">Years Exp.</span>
+        <!-- Services -->
+        <div class="card services-card">
+            <h3 data-key="services_title">What I Do</h3>
+            <div class="service-tags">
+                <span class="srv-tag">CI/CD Pipelines</span>
+                <span class="srv-tag">Cloud Migration</span>
+                <span class="srv-tag">Infrastructure as Code</span>
+                <span class="srv-tag">Security & Compliance</span>
+                <span class="srv-tag">Performance Tuning</span>
+                <span class="srv-tag">Disaster Recovery</span>
             </div>
-            <div class="stat-item">
-                <span class="number">200+</span>
-                <span class="label">Incidents Resolved</span>
+        </div>
+
+        <!-- Stats -->
+        <div class="card stat-card s1">
+            <div class="stat-value">5+</div>
+            <div class="stat-label" data-key="stat_exp">Years Exp.</div>
+        </div>
+        <div class="card stat-card s2">
+            <div class="stat-value">50+</div>
+            <div class="stat-label" data-key="stat_projects">Projects</div>
+        </div>
+
+        <!-- Footer / Contact -->
+        <div class="card footer-card" id="contact">
+            <h2 data-key="footer_cta">Let's Build Something Robust</h2>
+            <div class="social-row">
+                <a href="#" class="social-btn"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:email@example.com" class="social-btn main-cta"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
 
-        <!-- Dark Mode Toggle (Small) -->
-        <div class="card theme-card" id="theme-toggle">
-            <i class="fas fa-moon"></i>
-        </div>
+    </main>
 
+    <!-- Theme Toggle Fixed -->
+    <div class="floating-theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon"></i>
     </div>
+
     <!-- Re-adding Vazirmatn Font for Persian -->
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700&display=swap" rel="stylesheet">
     <script src="script.js"></script>

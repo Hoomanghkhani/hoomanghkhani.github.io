@@ -1,231 +1,160 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Time Update
-    function updateTime() {
-        const timeElement = document.getElementById('local-time');
-        const now = new Date();
-        const options = {
-            hour: '2-digit',
-            minute: '2-digit',
-            timeZone: 'Asia/Tehran' // User is in Iran based on earlier context ("Tehran, Iran" in HTML)
-        };
-        timeElement.textContent = now.toLocaleTimeString('en-US', options);
-    }
 
-    // Update immediately and then every minute
-    updateTime();
-    setInterval(updateTime, 60000);
-
-    // 2. Theme Toggling
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = themeToggle.querySelector('i');
+    /* --- 1. Language Switcher Logic --- */
+    const langToggle = document.getElementById('lang-toggle');
+    const langMenu = document.getElementById('lang-menu');
+    const langItems = document.querySelectorAll('.lang-menu li');
+    const currentLangText = document.querySelector('.current-lang-text');
+    const currentLangFlag = document.querySelector('.lang-toggle .fi');
     const body = document.body;
 
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        body.setAttribute('data-theme', savedTheme);
-        updateIcon(savedTheme);
-    }
-
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = body.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
-        body.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateIcon(newTheme);
+    // Toggle Dropdown
+    langToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langMenu.classList.toggle('open');
     });
 
-    function updateIcon(theme) {
-        if (theme === 'light') {
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
-        } else {
-            themeIcon.classList.remove('fa-sun');
-            themeIcon.classList.add('fa-moon');
-        }
-    }
+    // Close on Click Outside
+    document.addEventListener('click', () => {
+        langMenu.classList.remove('open');
+    });
 
-    // 3. Language Translation (SRE & DevOps Focus)
+    // Translation Data
     const translations = {
         en: {
-            role: "DevOps Engineer | SRE",
-            bio: "Bridging Development & Operations. Building reliable, scalable, and automated infrastructure.",
-            status: "On Call",
-            stack: "Observability Stack",
-            contact: "Ping Me",
-            project1_title: "K8s Cluster",
-            project1_desc: "Bare-metal HA Setup",
-            project2_title: "GitOps Pipe",
-            project2_desc: "ArgoCD & Helm Charts",
-            years: "Years Exp.",
-            projects: "Incidents Resolved",
-            uptime_label: "System Status",
-            cmd_text: "systemctl status"
+            hero_title: "Architecting <br> <span class='txt-gradient'>Scalable Systems</span>",
+            hero_bio: "I bridge the gap between complex development and reliable operations. Specializing in Automation, Cloud Infrastructure, and Observability.",
+            btn_contact: "Contact Me <i class='fas fa-arrow-right'></i>",
+            btn_resume: "Download CV <i class='fas fa-download'></i>",
+            stack_title: "Technologies",
+            exp_title: "Experience",
+            job1_title: "Senior DevOps Engineer",
+            job1_desc: "Leading cloud migration and implementing GitOps workflows.",
+            job2_title: "SRE Specialist",
+            job2_desc: "Improved system uptime to 99.99% and optimized monitoring.",
+            job3_title: "Linux Administrator",
+            job3_desc: "Managed over 500+ Linux servers and automated patching.",
+            cert_title: "Certifications",
+            services_title: "What I Do",
+            stat_exp: "Years Exp.",
+            stat_projects: "Projects",
+            footer_cta: "Let's Build Something Robust"
         },
         fa: {
-            role: "مهندس دواپس | SRE",
-            bio: "پل ارتباطی بین عملیات و توسعه. ساخت زیرساخت‌های پایدار، مقیاس‌پذیر و خودکار.",
-            status: "آنکال",
-            stack: "ابزارهای مانیتورینگ",
-            contact: "ارتباط با من",
-            project1_title: "کلاستر کوبرنتیز",
-            project1_desc: "کلاستر HA روی سرور",
-            project2_title: "پایپ‌لاین گیت‌لاپس",
-            project2_desc: "ArgoCD و Helm Charts",
-            years: "سال تجربه",
-            projects: "حل بحران‌ها",
-            uptime_label: "وضعیت سیستم",
-            cmd_text: "systemctl status"
+            hero_title: "معماری <br> <span class='txt-gradient'>سیستم‌های مقیاس‌پذیر</span>",
+            hero_bio: "پل ارتباطی بین توسعه پیچیده و عملیات پایدار. متخصص در اتوماسیون، زیرساخت ابری و مانیتورینگ.",
+            btn_contact: "تماس با من <i class='fas fa-arrow-left'></i>",
+            btn_resume: "دانلود رزومه <i class='fas fa-download'></i>",
+            stack_title: "تکنولوژی‌ها",
+            exp_title: "تجربیات",
+            job1_title: "مهندس ارشد DevOps",
+            job1_desc: "رهبری مهاجرت ابری و پیاده‌سازی جریان‌های کاری GitOps.",
+            job2_title: "متخصص SRE",
+            job2_desc: "بهبود پایداری سیستم تا ۹۹.۹۹٪ و بهینه‌سازی مانیتورینگ.",
+            job3_title: "مدیر لینوکس",
+            job3_desc: "مدیریت بیش از ۵۰۰ سرور لینوکس و اتوماسیون پچینگ.",
+            cert_title: "گواهینامه‌ها",
+            services_title: "خدمات من",
+            stat_exp: "سال تجربه",
+            stat_projects: "پروژه",
+            footer_cta: "بیایید چیزی قدرتمند بسازیم"
         },
         de: {
-            role: "DevOps Engineer | SRE",
-            bio: "Verbindung von Dev & Ops. Aufbau zuverlässiger, skalierbarer und automatisierter Infrastruktur.",
-            status: "Bereitschaft",
-            stack: "Beobachtbarkeit",
-            contact: "Ping mich an",
-            project1_title: "K8s Cluster",
-            project1_desc: "Bare-metal HA Setup",
-            project2_title: "GitOps Pipe",
-            project2_desc: "ArgoCD & Helm Charts",
-            years: "Jahre Erf.",
-            projects: "Vorfälle gelöst",
-            uptime_label: "Systemstatus",
-            cmd_text: "systemctl status"
+            hero_title: "Architekt <br> <span class='txt-gradient'>skalierbarer Systeme</span>",
+            hero_bio: "Die Brücke zwischen komplexer Entwicklung und zuverlässigem Betrieb. Spezialisiert auf Automatisierung, Cloud-Infrastruktur und Observability.",
+            btn_contact: "Kontaktieren <i class='fas fa-arrow-right'></i>",
+            btn_resume: "CV herunterladen <i class='fas fa-download'></i>",
+            stack_title: "Technologien",
+            exp_title: "Erfahrung",
+            job1_title: "Senior DevOps Engineer",
+            job1_desc: "Leitung der Cloud-Migration und Implementierung von GitOps-Workflows.",
+            job2_title: "SRE-Spezialist",
+            job2_desc: "Verbesserung der Systemverfügbarkeit auf 99,99% und Optimierung des Monitorings.",
+            job3_title: "Linux-Administrator",
+            job3_desc: "Verwaltung von über 500 Linux-Servern und automatisiertes Patching.",
+            cert_title: "Zertifizierungen",
+            services_title: "Was ich tue",
+            stat_exp: "Jahre Erf.",
+            stat_projects: "Projekte",
+            footer_cta: "Lass uns etwas Robustes bauen"
         }
     };
 
-    const langBtns = document.querySelectorAll('.lang-btn');
-    const elementsToTranslate = {
-        role: document.querySelector('.role'),
-        bio: document.querySelector('.bio'),
-        status: document.querySelector('.status-text'),
-        stack: document.querySelector('.stack-card h2'),
-        contact: document.querySelector('.contact-card-main h2'),
-        p1t: document.querySelector('.p1 h3'),
-        p1d: document.querySelector('.p1 p'),
-        p2t: document.querySelector('.p2 h3'),
-        p2d: document.querySelector('.p2 p'),
-        years: document.querySelector('.stat-item:nth-child(1) .label'),
-        projects: document.querySelector('.stat-item:nth-child(2) .label'),
-        uptime_label: document.querySelector('.terminal-title'), /* Re-mapped */
-        cmd_text: document.querySelector('.cmd-text')
-    };
+    // Lang Selection Logic
+    langItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const lang = item.getAttribute('data-lang');
+            const flagClass = item.querySelector('.fi').className;
+            const menuText = item.textContent.trim();
 
-    langBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const lang = btn.getAttribute('data-lang');
-
-            // Active class
-            langBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            // Set Direction
-            if (lang === 'fa') {
-                document.body.setAttribute('dir', 'rtl');
-                document.documentElement.lang = 'fa';
-            } else {
-                document.body.setAttribute('dir', 'ltr');
-                document.documentElement.lang = lang;
-            }
-
-            // Update Text
-            const t = translations[lang];
-            if (elementsToTranslate.role) elementsToTranslate.role.textContent = t.role;
-            if (elementsToTranslate.bio) elementsToTranslate.bio.textContent = t.bio;
-            if (elementsToTranslate.status) elementsToTranslate.status.textContent = t.status;
-            if (elementsToTranslate.stack) elementsToTranslate.stack.textContent = t.stack;
-            if (elementsToTranslate.contact) elementsToTranslate.contact.textContent = t.contact;
-            if (elementsToTranslate.p1t) elementsToTranslate.p1t.textContent = t.project1_title;
-            if (elementsToTranslate.p1d) elementsToTranslate.p1d.textContent = t.project1_desc;
-            if (elementsToTranslate.p2t) elementsToTranslate.p2t.textContent = t.project2_title;
-            if (elementsToTranslate.p2d) elementsToTranslate.p2d.textContent = t.project2_desc;
-            if (elementsToTranslate.years) elementsToTranslate.years.textContent = t.years;
-            if (elementsToTranslate.projects) elementsToTranslate.projects.textContent = t.projects;
-            if (elementsToTranslate.uptime_label) elementsToTranslate.uptime_label.textContent = t.uptime_label;
-            if (elementsToTranslate.cmd_text) elementsToTranslate.cmd_text.textContent = t.cmd_text;
+            // Perform Update
+            updateLanguage(lang, flagClass, menuText);
         });
     });
 
-    // 4. Monitoring Bar Animation (SRE Style) & Dynamic Values
-    const uptimeBars = document.querySelectorAll('.bar');
-    const latencyVal = document.querySelector('.status-value'); // Latency
-    const loadVal = document.querySelectorAll('.status-value')[1]; // Service Mesh -> Now Load for dynamic? 
-    // Actually relying on specific selection is brittle, let's select by context
+    function updateLanguage(lang, flagClass, text) {
+        // Update Button UI
+        currentLangText.textContent = text;
+        currentLangFlag.className = flagClass;
 
-    // Let's grab specific status values from the DOM based on text
-    const statusValues = document.querySelectorAll('.status-value');
+        // Update Direction & HTML Lang
+        if (lang === 'fa') {
+            document.body.setAttribute('dir', 'rtl');
+            document.documentElement.lang = 'fa';
+            // Swap arrow icons for RTL
+            const arrows = document.querySelectorAll('.fa-arrow-right');
+            arrows.forEach(a => { a.classList.remove('fa-arrow-right'); a.classList.add('fa-arrow-left'); });
+        } else {
+            document.body.setAttribute('dir', 'ltr');
+            document.documentElement.lang = lang;
+            const arrows = document.querySelectorAll('.fa-arrow-left'); // Revert
+            arrows.forEach(a => { a.classList.remove('fa-arrow-left'); a.classList.add('fa-arrow-right'); });
+        }
 
-    function animateBars() {
-        uptimeBars.forEach(bar => {
-            // Randomly toggle 'active' class to simulate CPU/Network load activity
-            // Smoother randomization
-            let height = 20;
-            if (Math.random() > 0.6) {
-                height = Math.floor(Math.random() * 60) + 30; // 30-90%
-                bar.classList.add('active');
-            } else {
-                height = Math.floor(Math.random() * 20) + 10; // 10-30%
-                bar.classList.remove('active');
+        // Translate Content
+        const t = translations[lang];
+        document.querySelectorAll('[data-key]').forEach(elem => {
+            const key = elem.getAttribute('data-key');
+            if (t[key]) {
+                elem.innerHTML = t[key];
             }
-            bar.style.height = `${height}%`;
         });
+    }
 
-        // Update Latency (Random walk)
-        if (statusValues.length > 1) {
-            // Assuming 2nd is Latency as per HTML order
-            // Actually let's look at index.html: 
-            // 1. Service Mesh -> Active
-            // 2. Latency -> 24ms
-            const currentLatency = parseInt(statusValues[1].textContent);
-            const variation = Math.floor(Math.random() * 10) - 5; // -5 to +5
-            let newLatency = currentLatency + variation;
-            if (newLatency < 10) newLatency = 12;
-            if (newLatency > 150) newLatency = 140;
-            statusValues[1].textContent = `${newLatency}ms`;
+
+    /* --- 2. Theme Toggle --- */
+    const themeBtn = document.getElementById('theme-toggle');
+    const themeIcon = themeBtn.querySelector('i');
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    body.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    themeBtn.addEventListener('click', () => {
+        const current = body.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+
+        body.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeIcon(next);
+    });
+
+    function updateThemeIcon(theme) {
+        if (theme === 'light') {
+            themeIcon.className = 'fas fa-sun';
+        } else {
+            themeIcon.className = 'fas fa-moon';
         }
     }
 
-    // Animate every 800ms for less frantic updates
-    setInterval(animateBars, 800);
-    animateBars();
 
-    // 5. Typing Effect for Command
-    const cmdText = document.querySelector('.cmd-text');
-    const fullCmd = "systemctl status k8s-cluster";
-    let charIndex = 0;
-
-    // Clear and restart typing
-    function typeCommand() {
-        cmdText.textContent = "";
-        charIndex = 0;
-        cmdText.classList.add('typing-cursor');
-
-        const typeInterval = setInterval(() => {
-            if (charIndex < fullCmd.length) {
-                cmdText.textContent += fullCmd.charAt(charIndex);
-                charIndex++;
-            } else {
-                clearInterval(typeInterval);
-                cmdText.classList.remove('typing-cursor');
-                // Wait and restart
-                setTimeout(typeCommand, 10000);
-            }
-        }, 100);
-    }
-
-    // Initial start lag
-    setTimeout(typeCommand, 1000);
-
-    // 6. Simple fade-in animation for cards
-    const cards = document.querySelectorAll('.card, .terminal-card-mini');
-    cards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        setTimeout(() => {
-            card.style.transition = 'opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)';
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }, 150 * index); // Staggered delay
+    /* --- 3. 3D Cube Spin Interactive --- */
+    const cube = document.querySelector('.cube-wrapper');
+    document.addEventListener('mousemove', (e) => {
+        const x = (window.innerWidth / 2 - e.pageX) / 20;
+        const y = (window.innerHeight / 2 - e.pageY) / 20;
+        cube.style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
     });
+
 });
