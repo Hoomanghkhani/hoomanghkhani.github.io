@@ -30,13 +30,14 @@
                     <div class="profile-pic-placeholder">H</div>
                 </div>
                 <div class="status-badge">
-                    <span class="pulse"></span> <span class="status-text">Available</span>
+                    <span class="pulse"></span> <span class="status-text">On Call</span>
                 </div>
             </div>
             <div class="profile-info">
                 <h1>Hooman</h1>
-                <p class="role">DevOps Engineer</p>
-                <p class="bio">Automating the world one pipeline at a time. Cloud native enthusiast & reliability guardian.</p>
+                <p class="role">DevOps Engineer | SRE</p>
+                <p class="bio">Bridging Development & Operations. Building reliable, scalable, and automated
+                    infrastructure.</p>
             </div>
         </div>
 
@@ -50,64 +51,84 @@
         <a href="#" target="_blank" class="card social-card twitter">
             <i class="fab fa-twitter"></i>
         </a>
-        
+
         <!-- Terminal / Uptime Card (Medium - Replaces Map) -->
         <div class="terminal-card-mini">
             <div class="terminal-header">
-                <div class="dot red"></div>
-                <div class="dot yellow"></div>
-                <div class="dot green"></div>
+                <span class="terminal-title">System Status</span>
+                <div class="indicators">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
             </div>
             <div class="terminal-body">
                 <div class="line">
-                    <span class="cmd">$ <span class="cmd-text">uptime</span></span>
+                    <span class="cmd">$ <span class="cmd-text">systemctl status</span></span>
                 </div>
-                <div class="line output">
-                    <span class="arg">up 42 days, 12:34, 1 user</span>
+                <div class="status-row">
+                    <span class="status-label">Service Mesh</span>
+                    <span class="status-value">Active</span>
                 </div>
-                <div class="line">
-                    <span class="cmd">$ status</span>
+                <div class="status-row">
+                    <span class="status-label">Latency (p99)</span>
+                    <span class="status-value">24ms</span>
                 </div>
-                <div class="line output">
-                    <span class="uptime-label" style="color:#2ecc71; font-size: 0.8rem">Uptime: 99.99%</span>
-                    <div class="uptime-graph">
-                        <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
-                        <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
-                        <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
-                    </div>
+                <div class="line" style="margin-top: 8px;">
+                    <span class="status-label">Load avg</span>
                 </div>
-                <div class="line">
-                    <span class="cmd">$ <span class="cursor"></span></span>
+                <div class="uptime-graph">
+                    <!-- 20 Bars for visual density -->
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
                 </div>
             </div>
         </div>
 
         <!-- Tech Stack (Wide) -->
         <div class="card stack-card">
-            <h2>Tech Stack</h2>
+            <h2>Observability Stack</h2>
             <div class="marquee-container">
                 <div class="marquee-content">
+                    <span><i class="fas fa-fire"></i> Prometheus</span>
+                    <span><i class="fas fa-chart-area"></i> Grafana</span>
                     <span><i class="fab fa-docker"></i> Docker</span>
                     <span><i class="fas fa-dharmachakra"></i> K8s</span>
-                    <span><i class="fab fa-aws"></i> AWS</span>
+                    <span><i class="fas fa-server"></i> Terraform</span>
                     <span><i class="fab fa-linux"></i> Linux</span>
-                    <span><i class="fas fa-server"></i> Ansible</span>
-                    <span><i class="fas fa-project-diagram"></i> Terraform</span>
-                    <span><i class="fab fa-jenkins"></i> Jenkins</span>
-                    <span><i class="fas fa-chart-line"></i> Grafana</span>
                     <span><i class="fab fa-python"></i> Python</span>
+                    <span><i class="fas fa-search"></i> ELK Stack</span>
+                    <span><i class="fab fa-aws"></i> AWS</span>
                 </div>
                 <!-- Duplicate for seamless loop -->
                 <div class="marquee-content" aria-hidden="true">
+                    <span><i class="fas fa-fire"></i> Prometheus</span>
+                    <span><i class="fas fa-chart-area"></i> Grafana</span>
                     <span><i class="fab fa-docker"></i> Docker</span>
                     <span><i class="fas fa-dharmachakra"></i> K8s</span>
-                    <span><i class="fab fa-aws"></i> AWS</span>
+                    <span><i class="fas fa-server"></i> Terraform</span>
                     <span><i class="fab fa-linux"></i> Linux</span>
-                    <span><i class="fas fa-server"></i> Ansible</span>
-                    <span><i class="fas fa-project-diagram"></i> Terraform</span>
-                    <span><i class="fab fa-jenkins"></i> Jenkins</span>
-                    <span><i class="fas fa-chart-line"></i> Grafana</span>
                     <span><i class="fab fa-python"></i> Python</span>
+                    <span><i class="fas fa-search"></i> ELK Stack</span>
+                    <span><i class="fab fa-aws"></i> AWS</span>
                 </div>
             </div>
         </div>
@@ -116,7 +137,7 @@
         <div class="card project-card p1">
             <div class="project-content">
                 <h3>K8s Cluster</h3>
-                <p>HA Cluster setup</p>
+                <p>Bare-metal HA Setup</p>
                 <div class="tags">
                     <span>Kubeadm</span>
                     <span>Ansible</span>
@@ -127,11 +148,11 @@
 
         <!-- Project 2 (Medium) -->
         <div class="card project-card p2">
-             <div class="project-content">
-                <h3>CI/CD Pipe</h3>
-                <p>Zero-downtime deploy</p>
+            <div class="project-content">
+                <h3>GitOps Pipe</h3>
+                <p>ArgoCD & Helm Charts</p>
                 <div class="tags">
-                    <span>GitLab</span>
+                    <span>GitLab CI</span>
                     <span>ArgoCD</span>
                 </div>
             </div>
@@ -140,50 +161,30 @@
 
         <!-- Contact (Wide/Medium) -->
         <div class="card contact-card-main">
-            <h2>Let's automate together</h2>
-            <p>Have a project in mind?</p>
+            <h2>Ping Me</h2>
+            <p>Ready for the next incident?</p>
             <a href="mailto:contact@example.com" class="email-btn">
-                contact@example.com <i class="far fa-copy"></i>
+                contact@example.com
             </a>
         </div>
-        
+
         <!-- Experience/Stats (Tall or Small) -->
-         <div class="card stats-card">
+        <div class="card stats-card">
             <div class="stat-item">
                 <span class="number">5+</span>
                 <span class="label">Years Exp.</span>
             </div>
             <div class="stat-item">
-                <span class="number">50+</span>
-                <span class="label">Deployments</span>
+                <span class="number">200+</span>
+                <span class="label">Incidents Resolved</span>
             </div>
         </div>
-        
-         <!-- Dark Mode Toggle (Small) -->
+
+        <!-- Dark Mode Toggle (Small) -->
         <div class="card theme-card" id="theme-toggle">
             <i class="fas fa-moon"></i>
         </div>
 
-        <!-- Time (Small - was map, now separate or moved) -> Let's put Time back in place of where map label was or add to profile header? 
-             Actually, let's keep it simple. The Map card was replaced by Terminal. 
-             I will add the time inside the Profile Header or creates a mini slot if needed.
-             Wait, I have enough grid cells. 
-             The grid was: 
-             Profile (2x2)
-             Social (1x1) x3
-             Map (1x1) -> Now Terminal (2x1)? No Terminal is best as 2x1. 
-             stack (2x1)
-             
-             Let's resize Terminal to 2x1 and shuffle.
-             Original Grid: 4 cols.
-             R1: Profile(2x2), Social(1), Social(1)
-             R2: Profile(2x2), Social(1), TIME_CARD(1) <-- New 1x1
-             R3: Terminal(2x1), Stack(2x1)
-             
-             Actually, strict bento grids are forgiving. Let's just fit the Terminal where the Map was but style it compact, or expand it.
-             The current CSS for `terminal-card-mini` has `grid-column: span 2`.
-             So I need to make room.
-        -->
     </div>
     <!-- Re-adding Vazirmatn Font for Persian -->
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700&display=swap" rel="stylesheet">
