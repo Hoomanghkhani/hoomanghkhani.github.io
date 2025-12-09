@@ -188,76 +188,91 @@ body {
 .profile-card {
     grid-column: span 2;
     grid-row: span 2;
-    justify-content: center;
-    /* Centered for DevOps intro */
-    text-align: center;
-    align-items: center;
-    padding-top: 50px;
-    /* Space for lang switcher */
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 32px;
 }
 
 .profile-header {
-    flex-direction: column;
-    align-items: center;
     width: 100%;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0;
 }
 
 .profile-pic-placeholder {
-    width: 80px;
-    height: 80px;
-    font-size: 2rem;
-    margin-bottom: 12px;
+    width: 64px;
+    height: 64px;
+    background: var(--card-hover);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    /* Circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-primary);
 }
 
 .status-badge {
-    display: inline-flex;
+    background: transparent;
+    border: 1px solid var(--success-color, #2ecc71);
+    color: var(--success-color, #2ecc71);
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
     align-items: center;
-    background: rgba(40, 167, 69, 0.1);
-    color: #2ecc71;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
+    gap: 8px;
 }
 
 .pulse {
-    width: 8px;
-    height: 8px;
-    background-color: #2ecc71;
+    width: 6px;
+    height: 6px;
+    background-color: currentColor;
     border-radius: 50%;
-    margin-right: 8px;
-    animation: pulse-animation 2s infinite;
+    box-shadow: 0 0 10px currentColor;
+    margin: 0;
+    animation: none;
+    /* Cleaner without constant pulse animation, or subtle */
+    opacity: 1;
 }
 
-@keyframes pulse-animation {
-    0% {
-        box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4);
-    }
-
-    70% {
-        box-shadow: 0 0 0 10px rgba(46, 204, 113, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
-    }
+.profile-info {
+    margin-top: auto;
+    text-align: left;
+    width: 100%;
 }
 
 .profile-info h1 {
-    font-size: 3rem;
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    margin-bottom: 8px;
+    background: linear-gradient(to right, var(--text-primary), var(--text-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .profile-info .role {
     color: var(--accent);
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 500;
     margin-bottom: 12px;
+    font-family: 'Fira Code', monospace;
 }
 
 .profile-info .bio {
     color: var(--text-secondary);
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 100%;
 }
 
 /* Terminal Card (RePLACES Map Card or Social) */
