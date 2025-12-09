@@ -70,32 +70,132 @@ body {
     border-color: var(--accent);
 }
 
+/* Language Switcher */
+.lang-switcher {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.lang-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 6px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-family: var(--font-heading);
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover, .lang-btn.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+/* RTL Support */
+[dir="rtl"] {
+    direction: rtl;
+    font-family: 'Vazirmatn', var(--font-body); /* Add Vazirmatn later in HTML */
+}
+
+[dir="rtl"] .lang-switcher {
+    right: auto;
+    left: 24px;
+}
+
+[dir="rtl"] .pulse {
+    margin-right: 0;
+    margin-left: 8px;
+}
+
+[dir="rtl"] .marquee-container {
+    mask-image: linear-gradient(to left, transparent, black 10%, black 90%, transparent);
+}
+
+[dir="rtl"] .project-arrow {
+    right: auto;
+    left: 24px;
+    transform: translate(10px, 10px);
+}
+
+[dir="rtl"] .project-card:hover .project-arrow {
+    transform: translate(0, 0);
+}
+
+[dir="rtl"] .email-btn i {
+    margin-right: 8px; /* Flip icon spacing */
+}
+
+/* DevOps Specifics */
+.terminal-text {
+    font-family: 'Fira Code', monospace;
+    color: #4af626; /* Matrix Green */
+}
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background-color: #4af626;
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.uptime-graph {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.bar {
+    flex: 1;
+    background-color: var(--accent);
+    opacity: 0.5;
+    border-radius: 2px;
+    transition: height 0.3s ease;
+}
+
+.bar:hover {
+    opacity: 1;
+    background-color: #2ecc71;
+}
+
 /* Specific Card Areas */
 
 /* Profile Card: 2x2 */
 .profile-card {
     grid-column: span 2;
     grid-row: span 2;
-    justify-content: space-between;
+    justify-content: center; /* Centered for DevOps intro */
+    text-align: center;
+    align-items: center;
+    padding-top: 50px; /* Space for lang switcher */
 }
 
 .profile-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .profile-pic-placeholder {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, var(--accent), var(--accent-light));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+    margin-bottom: 12px;
 }
 
 .status-badge {
@@ -133,9 +233,7 @@ body {
 }
 
 .profile-info h1 {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    margin-bottom: 4px;
+    font-size: 3rem;
 }
 
 .profile-info .role {
@@ -149,6 +247,38 @@ body {
     font-size: 1rem;
     line-height: 1.5;
 }
+
+/* Terminal Card (RePLACES Map Card or Social) */
+.terminal-card-mini {
+    grid-column: span 2;
+    grid-row: span 1;
+    background-color: #0d1117;
+    font-family: 'Fira Code', monospace;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #30363d;
+}
+
+.terminal-header {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.terminal-body {
+    font-size: 0.85rem;
+    color: #c9d1d9;
+}
+
+.cmd { color: #8b949e; }
+.arg { color: #a5d6ff; }
 
 /* Social Cards: 1x1 */
 .social-card {
@@ -408,6 +538,7 @@ body {
     .contact-card-main {
         grid-column: span 2;
     }
+    .terminal-card-mini { grid-column: span 3; }
 }
 
 @media (max-width: 768px) {
@@ -426,6 +557,7 @@ body {
     .contact-card-main {
         grid-column: span 2;
     }
+    .terminal-card-mini { grid-column: span 2; }
 
     /* Re-order for mobile linear flow if needed, but grid usually handles okay */
 }
@@ -444,3 +576,4 @@ body {
         min-height: auto;
     }
 }
+```

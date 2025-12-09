@@ -15,6 +15,13 @@
 </head>
 
 <body>
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="fa">فارسی</button>
+        <button class="lang-btn" data-lang="de">DE</button>
+    </div>
+
     <div class="bento-container">
         <!-- Profile Card (Large) -->
         <div class="card profile-card">
@@ -23,14 +30,13 @@
                     <div class="profile-pic-placeholder">H</div>
                 </div>
                 <div class="status-badge">
-                    <span class="pulse"></span> Available for work
+                    <span class="pulse"></span> <span class="status-text">Available</span>
                 </div>
             </div>
             <div class="profile-info">
                 <h1>Hooman</h1>
-                <p class="role">Full Stack Developer</p>
-                <p class="bio">Building digital experiences that matter. Obsessed with performance, clean code, and
-                    intuitive design.</p>
+                <p class="role">DevOps Engineer</p>
+                <p class="bio">Automating the world one pipeline at a time. Cloud native enthusiast & reliability guardian.</p>
             </div>
         </div>
 
@@ -44,15 +50,36 @@
         <a href="#" target="_blank" class="card social-card twitter">
             <i class="fab fa-twitter"></i>
         </a>
-
-        <!-- Location / Map (Medium) -->
-        <div class="card map-card">
-            <div class="map-bg"></div>
-            <div class="location-pin">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Tehran, Iran</span>
+        
+        <!-- Terminal / Uptime Card (Medium - Replaces Map) -->
+        <div class="terminal-card-mini">
+            <div class="terminal-header">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
             </div>
-            <div class="local-time" id="local-time">--:--</div>
+            <div class="terminal-body">
+                <div class="line">
+                    <span class="cmd">$ <span class="cmd-text">uptime</span></span>
+                </div>
+                <div class="line output">
+                    <span class="arg">up 42 days, 12:34, 1 user</span>
+                </div>
+                <div class="line">
+                    <span class="cmd">$ status</span>
+                </div>
+                <div class="line output">
+                    <span class="uptime-label" style="color:#2ecc71; font-size: 0.8rem">Uptime: 99.99%</span>
+                    <div class="uptime-graph">
+                        <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                        <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                        <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="cmd">$ <span class="cursor"></span></span>
+                </div>
+            </div>
         </div>
 
         <!-- Tech Stack (Wide) -->
@@ -60,27 +87,27 @@
             <h2>Tech Stack</h2>
             <div class="marquee-container">
                 <div class="marquee-content">
-                    <span><i class="fab fa-react"></i> React</span>
-                    <span><i class="fab fa-js"></i> JavaScript</span>
-                    <span><i class="fab fa-python"></i> Python</span>
-                    <span><i class="fab fa-node"></i> Node.js</span>
                     <span><i class="fab fa-docker"></i> Docker</span>
-                    <span><i class="fab fa-git-alt"></i> Git</span>
-                    <span><i class="fas fa-database"></i> SQL</span>
-                    <span><i class="fab fa-html5"></i> HTML5</span>
-                    <span><i class="fab fa-css3-alt"></i> CSS3</span>
+                    <span><i class="fas fa-dharmachakra"></i> K8s</span>
+                    <span><i class="fab fa-aws"></i> AWS</span>
+                    <span><i class="fab fa-linux"></i> Linux</span>
+                    <span><i class="fas fa-server"></i> Ansible</span>
+                    <span><i class="fas fa-project-diagram"></i> Terraform</span>
+                    <span><i class="fab fa-jenkins"></i> Jenkins</span>
+                    <span><i class="fas fa-chart-line"></i> Grafana</span>
+                    <span><i class="fab fa-python"></i> Python</span>
                 </div>
                 <!-- Duplicate for seamless loop -->
                 <div class="marquee-content" aria-hidden="true">
-                    <span><i class="fab fa-react"></i> React</span>
-                    <span><i class="fab fa-js"></i> JavaScript</span>
-                    <span><i class="fab fa-python"></i> Python</span>
-                    <span><i class="fab fa-node"></i> Node.js</span>
                     <span><i class="fab fa-docker"></i> Docker</span>
-                    <span><i class="fab fa-git-alt"></i> Git</span>
-                    <span><i class="fas fa-database"></i> SQL</span>
-                    <span><i class="fab fa-html5"></i> HTML5</span>
-                    <span><i class="fab fa-css3-alt"></i> CSS3</span>
+                    <span><i class="fas fa-dharmachakra"></i> K8s</span>
+                    <span><i class="fab fa-aws"></i> AWS</span>
+                    <span><i class="fab fa-linux"></i> Linux</span>
+                    <span><i class="fas fa-server"></i> Ansible</span>
+                    <span><i class="fas fa-project-diagram"></i> Terraform</span>
+                    <span><i class="fab fa-jenkins"></i> Jenkins</span>
+                    <span><i class="fas fa-chart-line"></i> Grafana</span>
+                    <span><i class="fab fa-python"></i> Python</span>
                 </div>
             </div>
         </div>
@@ -88,11 +115,11 @@
         <!-- Project 1 (Medium) -->
         <div class="card project-card p1">
             <div class="project-content">
-                <h3>Portfolio V1</h3>
-                <p>My previous portfolio iteration.</p>
+                <h3>K8s Cluster</h3>
+                <p>HA Cluster setup</p>
                 <div class="tags">
-                    <span>HTML</span>
-                    <span>CSS</span>
+                    <span>Kubeadm</span>
+                    <span>Ansible</span>
                 </div>
             </div>
             <div class="project-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
@@ -100,12 +127,12 @@
 
         <!-- Project 2 (Medium) -->
         <div class="card project-card p2">
-            <div class="project-content">
-                <h3>E-Commerce</h3>
-                <p>Full stack shopping platform.</p>
+             <div class="project-content">
+                <h3>CI/CD Pipe</h3>
+                <p>Zero-downtime deploy</p>
                 <div class="tags">
-                    <span>Next.js</span>
-                    <span>Stripe</span>
+                    <span>GitLab</span>
+                    <span>ArgoCD</span>
                 </div>
             </div>
             <div class="project-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
@@ -113,31 +140,53 @@
 
         <!-- Contact (Wide/Medium) -->
         <div class="card contact-card-main">
-            <h2>Let's work together</h2>
+            <h2>Let's automate together</h2>
             <p>Have a project in mind?</p>
             <a href="mailto:contact@example.com" class="email-btn">
                 contact@example.com <i class="far fa-copy"></i>
             </a>
         </div>
-
+        
         <!-- Experience/Stats (Tall or Small) -->
-        <div class="card stats-card">
+         <div class="card stats-card">
             <div class="stat-item">
-                <span class="number">3+</span>
+                <span class="number">5+</span>
                 <span class="label">Years Exp.</span>
             </div>
             <div class="stat-item">
-                <span class="number">20+</span>
-                <span class="label">Projects</span>
+                <span class="number">50+</span>
+                <span class="label">Deployments</span>
             </div>
         </div>
-
-        <!-- Dark Mode Toggle (Small) -->
+        
+         <!-- Dark Mode Toggle (Small) -->
         <div class="card theme-card" id="theme-toggle">
             <i class="fas fa-moon"></i>
         </div>
 
+        <!-- Time (Small - was map, now separate or moved) -> Let's put Time back in place of where map label was or add to profile header? 
+             Actually, let's keep it simple. The Map card was replaced by Terminal. 
+             I will add the time inside the Profile Header or creates a mini slot if needed.
+             Wait, I have enough grid cells. 
+             The grid was: 
+             Profile (2x2)
+             Social (1x1) x3
+             Map (1x1) -> Now Terminal (2x1)? No Terminal is best as 2x1. 
+             stack (2x1)
+             
+             Let's resize Terminal to 2x1 and shuffle.
+             Original Grid: 4 cols.
+             R1: Profile(2x2), Social(1), Social(1)
+             R2: Profile(2x2), Social(1), TIME_CARD(1) <-- New 1x1
+             R3: Terminal(2x1), Stack(2x1)
+             
+             Actually, strict bento grids are forgiving. Let's just fit the Terminal where the Map was but style it compact, or expand it.
+             The current CSS for `terminal-card-mini` has `grid-column: span 2`.
+             So I need to make room.
+        -->
     </div>
+    <!-- Re-adding Vazirmatn Font for Persian -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700&display=swap" rel="stylesheet">
     <script src="script.js"></script>
 </body>
 
