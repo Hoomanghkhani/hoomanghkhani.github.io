@@ -38,6 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
             services_title: "What I Do",
             stat_exp: "Years Exp.",
             stat_projects: "Projects",
+            projects_title: "Projects",
+            project1_title: "Auto-scaling CI/CD on AWS",
+            project1_desc: "A Jenkins pipeline using spot instances to run builds, saving 60% on EC2 costs.",
+            project2_title: "K8s GitOps Platform",
+            project2_desc: "Built a developer platform on EKS with ArgoCD for seamless and secure deployments.",
             footer_cta: "Let's Build Something Robust"
         },
         fa: {
@@ -57,6 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
             services_title: "خدمات من",
             stat_exp: "سال تجربه",
             stat_projects: "پروژه",
+            projects_title: "پروژه‌ها",
+            project1_title: "CI/CD خودکار در AWS",
+            project1_desc: "یک خط لوله Jenkins با استفاده از spot instances برای اجرای buildها که ۶۰٪ در هزینه‌های EC2 صرفه‌جویی می‌کند.",
+            project2_title: "پلتفرم K8s GitOps",
+            project2_desc: "یک پلتفرم توسعه‌دهنده بر روی EKS با ArgoCD برای استقرارهای یکپارچه و امن ساخته شده است.",
             footer_cta: "بیایید چیزی قدرتمند بسازیم"
         },
         de: {
@@ -76,6 +86,11 @@ document.addEventListener('DOMContentLoaded', () => {
             services_title: "Was ich tue",
             stat_exp: "Jahre Erf.",
             stat_projects: "Projekte",
+            projects_title: "Projekte",
+            project1_title: "Auto-skalierende CI/CD auf AWS",
+            project1_desc: "Eine Jenkins-Pipeline, die Spot-Instanzen zur Ausführung von Builds verwendet und 60 % der EC2-Kosten einspart.",
+            project2_title: "K8s GitOps-Plattform",
+            project2_desc: "Aufbau einer Entwicklerplattform auf EKS mit ArgoCD für nahtlose und sichere Bereitstellungen.",
             footer_cta: "Lass uns etwas Robustes bauen"
         }
     };

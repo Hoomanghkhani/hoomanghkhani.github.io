@@ -440,6 +440,70 @@ body {
     margin-top: 5px;
 }
 
+/* Projects */
+.projects-card {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.projects-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--text-muted);
+}
+
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid var(--card-border);
+}
+
+.project-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.project-icon {
+    font-size: 1rem;
+    color: var(--secondary);
+}
+
+.project-title {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.project-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.project-tags span {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    background: var(--primary-t-01);
+    color: var(--primary);
+    padding: 3px 6px;
+    border-radius: 4px;
+    background-color: #818cf822;
+}
+
 /* Certifications */
 .cert-card {
     grid-column: span 1;
