@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hooman | DevOps & SRE Engineer Portfolio - Specializing in Automation, Cloud Infrastructure, and Observability.">
     <title>Hooman | DevOps & SRE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Flag Icons -->
@@ -26,7 +28,7 @@
     <nav class="navbar">
         <div class="nav-logo">HG.</div>
         <div class="lang-dropdown-container">
-            <button class="lang-toggle" id="lang-toggle">
+            <button class="lang-toggle" id="lang-toggle" aria-label="Switch Language" aria-haspopup="true" aria-expanded="false">
                 <span class="fi fi-gb"></span> <span class="current-lang-text">English</span> <i
                     class="fas fa-chevron-down"></i>
             </button>
@@ -204,22 +206,20 @@
         <div class="card footer-card" id="contact">
             <h2 data-key="footer_cta">Let's Build Something Robust</h2>
             <div class="social-row">
-                <a href="#" class="social-btn"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-btn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
-                <a href="mailto:email@example.com" class="social-btn main-cta"><i class="fas fa-envelope"></i></a>
+                <a href="#" class="social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:email@example.com" class="social-btn main-cta" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
 
     </main>
 
     <!-- Theme Toggle Fixed -->
-    <div class="floating-theme-toggle" id="theme-toggle">
+    <div class="floating-theme-toggle" id="theme-toggle" role="button" tabindex="0" aria-label="Toggle Dark Mode">
         <i class="fas fa-moon"></i>
     </div>
 
-    <!-- Re-adding Vazirmatn Font for Persian -->
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700&display=swap" rel="stylesheet">
     <script src="script.js"></script>
 </body>
 

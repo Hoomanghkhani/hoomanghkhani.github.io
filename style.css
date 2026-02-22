@@ -11,8 +11,10 @@
     --secondary: #2dd4bf;
     /* Teal 400 */
     --text-main: #ffffff;
+    --text-title: #f0f4ff;
     --text-muted: #9ca3af;
     --font-heading: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 }
 
@@ -28,6 +30,7 @@
     --secondary: #0d9488;
     /* Teal 600 */
     --text-main: #0f172a;
+    --text-title: #212529;
     --text-muted: #64748b;
 }
 
@@ -38,7 +41,7 @@
 }
 
 body {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     background-color: var(--bg-dark);
     color: var(--text-main);
     overflow-x: hidden;
@@ -75,7 +78,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 30px 50px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -84,6 +87,7 @@ body {
     font-weight: 800;
     font-size: 1.5rem;
     letter-spacing: -1px;
+    color: var(--text-title);
 }
 
 /* Language Dropdown */
@@ -174,7 +178,7 @@ body {
     border-radius: 20px;
     padding: 30px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, border-color 0.3s;
+    transition: transform 0.3s ease, border-color 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
@@ -191,7 +195,7 @@ body {
     justify-content: space-between;
     align-items: center;
     min-height: 400px;
-    position: relative;
+    /* position: relative; */
     overflow: hidden;
 }
 
@@ -226,12 +230,13 @@ body {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 4rem;
     line-height: 1.1;
     font-weight: 800;
     margin-bottom: 20px;
+    color: var(--text-title);
+    font-family: var(--font-heading);
 }
-
 .txt-gradient {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     -webkit-background-clip: text;
@@ -256,7 +261,7 @@ body {
     border-radius: 12px;
     font-weight: 600;
     font-size: 0.95rem;
-    display: inline-flex;
+    display: inline-block;
     align-items: center;
     gap: 8px;
     transition: 0.3s;
@@ -420,6 +425,7 @@ body {
     font-size: 0.8rem;
     color: var(--text-muted);
     font-family: var(--font-mono);
+    text-transform: uppercase;
     margin-bottom: 4px;
 }
 
@@ -438,70 +444,6 @@ body {
     font-size: 0.9rem;
     color: var(--text-muted);
     margin-top: 5px;
-}
-
-/* Projects */
-.projects-card {
-    grid-column: span 2;
-    grid-row: span 1;
-}
-
-.projects-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    color: var(--text-muted);
-}
-
-.projects-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.project-item {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px solid var(--card-border);
-}
-
-.project-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.project-icon {
-    font-size: 1rem;
-    color: var(--secondary);
-}
-
-.project-title {
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-.project-desc {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-bottom: 15px;
-}
-
-.project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-}
-
-.project-tags span {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    background: var(--primary-t-01);
-    color: var(--primary);
-    padding: 3px 6px;
-    border-radius: 4px;
-    background-color: #818cf822;
 }
 
 /* Certifications */
@@ -578,6 +520,7 @@ body {
 
 .footer-card h2 {
     font-size: 1.5rem;
+    color: var(--text-title);
 }
 
 .social-row {
@@ -640,6 +583,10 @@ body {
     font-family: 'Vazirmatn', sans-serif;
 }
 
+[dir="rtl"] .hero-actions {
+    flex-direction: row-reverse;
+}
+
 [dir="rtl"] .hero-title,
 [dir="rtl"] .hero-bio,
 [dir="rtl"] .tl-content,
@@ -670,6 +617,7 @@ body {
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
     }
+
 
     .hero-card {
         grid-column: span 2;
@@ -704,9 +652,17 @@ body {
     .grid-container {
         display: flex;
         flex-direction: column;
+        padding: 0 10px 20px 10px;
     }
 
     .hero-title {
         font-size: 2.2rem;
+    }
+
+    .navbar {
+        padding: 20px;
+    }
+    .lang-dropdown-container {
+        position: static;
     }
 }
