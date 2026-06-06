@@ -1,18 +1,15 @@
 :root {
-    --bg-dark: #09090b;
-    --bg-gradient-start: #1e1b4b;
-    /* Indigo 950 */
-    --bg-gradient-end: #09090b;
-    --card-bg: rgba(255, 255, 255, 0.03);
-    --card-border: rgba(255, 255, 255, 0.08);
-    --card-blur: 16px;
+    --bg-dark: #0f172a;
+    --bg-gradient-start: #312e81;
+    --bg-gradient-end: #0f172a;
+    --card-bg: rgba(30, 41, 59, 0.4);
+    --card-border: rgba(148, 163, 184, 0.1);
+    --card-blur: 24px;
     --primary: #818cf8;
-    /* Indigo 400 */
     --secondary: #2dd4bf;
-    /* Teal 400 */
-    --text-main: #ffffff;
-    --text-title: #f0f4ff;
-    --text-muted: #9ca3af;
+    --text-main: #f8fafc;
+    --text-title: #ffffff;
+    --text-muted: #94a3b8;
     --font-heading: 'Plus Jakarta Sans', sans-serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
@@ -26,11 +23,9 @@
     --card-border: rgba(0, 0, 0, 0.05);
     --card-blur: 20px;
     --primary: #4f46e5;
-    /* Indigo 600 */
     --secondary: #0d9488;
-    /* Teal 600 */
     --text-main: #0f172a;
-    --text-title: #212529;
+    --text-title: #1e293b;
     --text-muted: #64748b;
 }
 
@@ -85,9 +80,12 @@ body {
 
 .nav-logo {
     font-weight: 800;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     letter-spacing: -1px;
     color: var(--text-title);
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* Language Dropdown */
@@ -182,8 +180,9 @@ body {
 }
 
 .card:hover {
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: var(--primary);
     transform: translateY(-5px);
+    box-shadow: 0 8px 40px rgba(129, 140, 248, 0.15);
 }
 
 /* Sections */
