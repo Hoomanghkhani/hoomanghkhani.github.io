@@ -73,7 +73,8 @@ body {
 /* Layout */
 .layout-container {
     display: flex;
-    max-width: 1300px;
+    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     min-height: 100vh;
 }
@@ -81,7 +82,7 @@ body {
 /* Left Panel */
 .profile-panel {
     flex: 0 0 400px;
-    padding: 40px 20px 40px 40px;
+    padding: 40px;
     position: sticky;
     top: 0;
     height: 100vh;
@@ -219,7 +220,7 @@ body {
 /* Right Panel */
 .content-panel {
     flex: 1;
-    padding: 40px 40px 40px 20px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -426,6 +427,8 @@ body {
 
     .profile-card {
         padding: 30px;
+        align-items: center;
+        text-align: center;
     }
 
     .content-panel {
@@ -434,6 +437,18 @@ body {
 
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        align-items: center;
+    }
+
+    .contact-link {
+        justify-content: center;
+    }
+
+    .lang-switcher {
+        justify-content: center;
     }
 }
 
