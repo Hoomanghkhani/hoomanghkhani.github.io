@@ -1,224 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hooman | DevOps & SRE Engineer Portfolio - Specializing in Automation, Cloud Infrastructure, and Observability.">
-    <title>Hooman | DevOps & SRE</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Hooman Ghardashkhani Niari | SRE & DevOps</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Flag Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css" />
 </head>
-
 <body>
+    <div class="background-mesh"></div>
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
 
-    <!-- Background Elements -->
-    <div class="bg-gradient"></div>
-    <div class="bg-mesh"></div>
+    <div class="layout-container">
+        <!-- LEFT PANEL: Sticky Profile -->
+        <aside class="profile-panel">
+            <div class="profile-card glass-panel">
+                <div class="avatar-placeholder">HG</div>
+                <h1 class="name">Hooman Ghardashkhani Niari</h1>
+                <h2 class="title" data-key="title">Site Reliability Engineer <br>& Infrastructure Architect</h2>
+                <p class="tagline" data-key="tagline">Engineering high-availability systems & zero-downtime deployments.</p>
 
-    <!-- Navigation / Language -->
-    <nav class="navbar">
-        <div class="nav-logo">HG.</div>
-        <div class="lang-dropdown-container">
-            <button class="lang-toggle" id="lang-toggle" aria-label="Switch Language" aria-haspopup="true" aria-expanded="false">
-                <span class="fi fi-gb"></span> <span class="current-lang-text">English</span> <i
-                    class="fas fa-chevron-down"></i>
-            </button>
-            <ul class="lang-menu" id="lang-menu">
-                <li data-lang="en"><span class="fi fi-gb"></span> English</li>
-                <li data-lang="fa"><span class="fi fi-ir"></span> فارسی</li>
-                <li data-lang="de"><span class="fi fi-de"></span> Deutsch</li>
-            </ul>
-        </div>
-    </nav>
-
-    <main class="grid-container">
-
-        <!-- Hero / Profile -->
-        <div class="card hero-card">
-            <div class="hero-content">
-                <div class="badge-container">
-                    <span class="badge status-badge"><span class="dot green"></span> Available for Projects</span>
-                    <span class="badge role-badge">DevOps | SRE</span>
+                <div class="contact-info">
+                    <a href="mailto:hooman.ghkhani@gmail.com" class="contact-link" aria-label="Email">
+                        <div class="icon-box"><i class="fas fa-envelope"></i></div> 
+                        <span>hooman.ghkhani@gmail.com</span>
+                    </a>
+                    <a href="tel:+989380890329" class="contact-link" aria-label="Phone">
+                        <div class="icon-box"><i class="fas fa-phone"></i></div> 
+                        <span>+98 938 089 0329</span>
+                    </a>
+                    <a href="https://github.com/Hoomanghkhani" class="contact-link" target="_blank" rel="noreferrer" aria-label="GitHub">
+                        <div class="icon-box"><i class="fab fa-github"></i></div> 
+                        <span>github.com/Hoomanghkhani</span>
+                    </a>
+                    <a href="https://linkedin.com/search/results/all/?keywords=Hooman+Ghardashkhani+Niari" class="contact-link" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                        <div class="icon-box"><i class="fab fa-linkedin"></i></div> 
+                        <span>LinkedIn Profile</span>
+                    </a>
                 </div>
-                <h1 class="hero-title" data-key="hero_title">Architecting <br> <span class="txt-gradient">Scalable
-                        Systems</span></h1>
-                <p class="hero-bio" data-key="hero_bio">
-                    I bridge the gap between complex development and reliable operations. Specializing in Automation,
-                    Cloud Infrastructure, and Observability.
-                </p>
-                <div class="hero-actions">
-                    <a href="#contact" class="btn btn-primary" data-key="btn_contact">Contact Me <i
-                            class="fas fa-arrow-right"></i></a>
-                    <a href="#" class="btn btn-secondary" data-key="btn_resume">Download CV <i
-                            class="fas fa-download"></i></a>
+
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="fa">FA</button>
+                    <button class="lang-btn" data-lang="de">DE</button>
                 </div>
             </div>
-            <div class="hero-visual">
-                <!-- Abstract 3D-like CSS Element -->
-                <div class="cube-wrapper">
-                    <div class="cube">
-                        <div class="face front"><i class="fab fa-docker"></i></div>
-                        <div class="face back"><i class="fas fa-server"></i></div>
-                        <div class="face right"><i class="fas fa-dharmachakra"></i></div>
-                        <div class="face left"><i class="fab fa-aws"></i></div>
-                        <div class="face top"><i class="fab fa-linux"></i></div>
-                        <div class="face bottom"><i class="fas fa-code"></i></div>
+        </aside>
+
+        <!-- RIGHT PANEL: Scrollable Content -->
+        <main class="content-panel">
+            
+            <section class="section about-section glass-panel fade-in-section">
+                <h3 class="section-title" data-key="about_title">About Me</h3>
+                <p class="section-text" data-key="about_desc">SRE & Infrastructure Specialist with over 5 years of experience maximizing system uptime and automation in high-availability environments. Proven track record of architecting highly reliable infrastructure, optimizing CI/CD workflows, and reducing production downtime through proactive observability and Python-driven automation.</p>
+            </section>
+
+            <section class="section experience-section fade-in-section">
+                <h3 class="section-title" data-key="exp_title">Experience</h3>
+                
+                <div class="timeline-item glass-panel">
+                    <div class="tl-meta">
+                        <span class="tl-date">2025 — Present</span>
+                        <span class="tl-company">Bontech • Tehran, Iran</span>
+                    </div>
+                    <h4 class="tl-role" data-key="job1_title">Lead Site Reliability Engineer (SRE)</h4>
+                    <p class="tl-desc" data-key="job1_desc">Architecting highly available Kubernetes clusters and steering the migration of monolithic legacy services to robust microservice architectures. Engineering secure GitLab CI/CD pipelines to ensure automated, zero-downtime deployments. Developing advanced observability and alerting systems to proactively detect anomalies and drastically reduce MTTR, ensuring 99.9% uptime for core financial services.</p>
+                    <div class="tech-tags">
+                        <span>Kubernetes</span><span>Docker</span><span>Terraform</span><span>Ansible</span><span>Traefik</span>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Tech Stack -->
-        <div class="card stack-card">
-            <h3 data-key="stack_title">Technologies</h3>
-            <div class="stack-grid">
-                <div class="tech-item"><i class="fab fa-docker"></i> Docker</div>
-                <div class="tech-item"><i class="fas fa-dharmachakra"></i> Kubernetes</div>
-                <div class="tech-item"><i class="fab fa-linux"></i> Linux</div>
-                <div class="tech-item"><i class="fas fa-server"></i> Terraform</div>
-                <div class="tech-item"><i class="fas fa-shoe-prints"></i> Ansible</div>
-                <div class="tech-item"><i class="fab fa-python"></i> Python</div>
-                <div class="tech-item"><i class="fas fa-terminal"></i> Bash</div>
-                <div class="tech-item"><i class="fab fa-gitlab"></i> GitLab CI/CD</div>
-                <div class="tech-item"><i class="fas fa-network-wired"></i> NGINX</div>
-                <div class="tech-item"><i class="fas fa-chart-line"></i> Zabbix</div>
-            </div>
-        </div>
-
-        <!-- Experience Timeline -->
-        <div class="card exp-card">
-            <h3 data-key="exp_title">Experience</h3>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="tl-date">2025 - Present</div>
-                    <div class="tl-content">
-                        <h4 data-key="job1_title">Site Reliability Engineer (SRE)</h4>
-                        <span class="company">Bontech</span>
-                        <p data-key="job1_desc">Maintained 99.9% availability, migrated to K8s, Traefik, Gitlab CI/CD, Terraform & Ansible at Bontech.</p>
+                <div class="timeline-item glass-panel">
+                    <div class="tl-meta">
+                        <span class="tl-date">2024 — 2025</span>
+                        <span class="tl-company">Arzsh Afaranan Koohestan • Tehran, Iran</span>
+                    </div>
+                    <h4 class="tl-role" data-key="job2_title">DevOps & Infrastructure Engineer</h4>
+                    <p class="tl-desc" data-key="job2_desc">Managed and optimized enterprise virtualized infrastructure using VMware ESXi for continuous uptime. Designed and maintained resilient backup and replication strategies utilizing Veeam to guarantee data integrity. Built high-performance NGINX reverse proxies for load distribution and automated complex system configurations using Ansible playbooks.</p>
+                    <div class="tech-tags">
+                        <span>VMware ESXi</span><span>Veeam</span><span>NGINX</span><span>GitLab CI/CD</span><span>Ansible</span>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="tl-date">2024 - 2025</div>
-                    <div class="tl-content">
-                        <h4 data-key="job2_title">DevOps & Infrastructure Engineer</h4>
-                        <span class="company">Arzsh Afaranan Koohestan</span>
-                        <p data-key="job2_desc">Managed enterprise virtualized infrastructure using VMware ESXi, Veeam, and automated with Ansible at Arzsh Afaranan Koohestan.</p>
+
+                <div class="timeline-item glass-panel">
+                    <div class="tl-meta">
+                        <span class="tl-date">2020 — 2024</span>
+                        <span class="tl-company">Food Industry Sector • Tehran, Iran</span>
+                    </div>
+                    <h4 class="tl-role" data-key="job3_title">Infrastructure Reliability Specialist</h4>
+                    <p class="tl-desc" data-key="job3_desc">Spearheaded the design and execution of a strict Preventive Maintenance lifecycle, slashing monthly downtime by 60%. Engineered Python-based automation scripts for backup workflows, reducing execution time by 66% and saving hardware resources. Managed complex enterprise network infrastructures including cross-branch routing and Linux/Windows server ecosystems.</p>
+                    <div class="tech-tags">
+                        <span>Linux</span><span>Python</span><span>Bash</span><span>Networking</span>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="tl-date">2020 - 2024</div>
-                    <div class="tl-content">
-                        <h4 data-key="job3_title">System Administrator / IT Specialist</h4>
-                        <span class="company">Food Industry Sector</span>
-                        <p data-key="job3_desc">Reduced monthly downtime by 60% via PM lifecycle and optimized backups via Python in Food Industry Sector.</p>
+
+            </section>
+
+            <section class="section skills-section glass-panel fade-in-section">
+                <h3 class="section-title" data-key="skills_title">Technical Arsenal</h3>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4 data-key="cat_orch">Orchestration & IaC</h4>
+                        <div class="tech-tags">
+                            <span>Kubernetes</span><span>Docker</span><span>Terraform</span><span>Ansible</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4 data-key="cat_cicd">CI/CD & Servers</h4>
+                        <div class="tech-tags">
+                            <span>GitLab CI/CD</span><span>Linux (LPIC-1)</span><span>NGINX</span><span>Traefik</span><span>Windows Server</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4 data-key="cat_net">Networking & Security</h4>
+                        <div class="tech-tags">
+                            <span>CCNA</span><span>MikroTik (MTCNA)</span><span>Firewalls</span><span>VPNs</span><span>Routing/Switching</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4 data-key="cat_obs">Observability & Coding</h4>
+                        <div class="tech-tags">
+                            <span>Zabbix</span><span>PRTG</span><span>Python</span><span>Bash</span><span>SQL</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
 
-        <!-- Projects -->
-        <div class="card projects-card">
-            <h3 data-key="projects_title">Projects</h3>
-            <div class="projects-grid">
-                <div class="project-item">
-                    <div class="project-header">
-                        <i class="fas fa-rocket project-icon"></i>
-                        <h4 class="project-title" data-key="project1_title">Auto-scaling CI/CD on AWS</h4>
-                    </div>
-                    <p class="project-desc" data-key="project1_desc">A Jenkins pipeline using spot instances to run builds, saving 60% on EC2 costs.</p>
-                    <div class="project-tags">
-                        <span>Jenkins</span>
-                        <span>AWS</span>
-                        <span>EC2</span>
-                    </div>
-                </div>
-                <div class="project-item">
-                    <div class="project-header">
-                        <i class="fas fa-cube project-icon"></i>
-                        <h4 class="project-title" data-key="project2_title">K8s GitOps Platform</h4>
-                    </div>
-                    <p class="project-desc" data-key="project2_desc">Built a developer platform on EKS with ArgoCD for seamless and secure deployments.</p>
-                    <div class="project-tags">
-                        <span>Kubernetes</span>
-                        <span>ArgoCD</span>
-                        <span>GitOps</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <section class="section certs-section glass-panel fade-in-section">
+                <h3 class="section-title" data-key="certs_title">Certifications & Education</h3>
+                <ul class="cert-list">
+                    <li><div class="cert-icon-box"><i class="fas fa-graduation-cap"></i></div> <div><strong data-key="cert_uni">B.Sc. in ICT</strong> <span class="cert-meta" data-key="cert_uni_meta">Shaheed Shamsipoor Technical College • GPA: 17.78/20</span></div></li>
+                    <li><div class="cert-icon-box"><i class="fab fa-linux"></i></div> <div><strong>LPIC-1</strong> <span class="cert-meta">Linux Professional Institute Certification</span></div></li>
+                    <li><div class="cert-icon-box"><i class="fas fa-network-wired"></i></div> <div><strong>CCNA R&S</strong> <span class="cert-meta">Cisco Certified Network Associate</span></div></li>
+                    <li><div class="cert-icon-box"><i class="fab fa-python"></i></div> <div><strong data-key="cert_py">Python Programming Certification</strong> <span class="cert-meta">Tehran Business School</span></div></li>
+                </ul>
+            </section>
 
-        <!-- Certifications -->
-        <div class="card cert-card">
-            <h3 data-key="cert_title">Certifications</h3>
-            <ul class="cert-list">
-                <li>
-                    <i class="fab fa-linux cert-icon" style="font-size: 2rem; margin-right: 15px; color: var(--text-color);"></i>
-                    <div>
-                        <strong>LPIC-1</strong>
-                        <span>Linux Professional Institute</span>
-                    </div>
-                </li>
-                <li>
-                    <i class="fas fa-network-wired cert-icon" style="font-size: 2rem; margin-right: 15px; color: var(--text-color);"></i>
-                    <div>
-                        <strong>CCNA R&S</strong>
-                        <span>Cisco Certified Network Associate</span>
-                    </div>
-                </li>
-            </ul>
-        </div>
+            <footer class="site-footer">
+                <p data-key="footer_text">© 2026 Hooman Ghardashkhani Niari. Architected with precision.</p>
+            </footer>
 
-        <!-- Services -->
-        <div class="card services-card">
-            <h3 data-key="services_title">What I Do</h3>
-            <div class="service-tags">
-                <span class="srv-tag">CI/CD Pipelines</span>
-                <span class="srv-tag">Cloud Migration</span>
-                <span class="srv-tag">Infrastructure as Code</span>
-                <span class="srv-tag">Security & Compliance</span>
-                <span class="srv-tag">Performance Tuning</span>
-                <span class="srv-tag">Disaster Recovery</span>
-            </div>
-        </div>
-
-        <!-- Stats -->
-        <div class="card stat-card s1">
-            <div class="stat-value">5+</div>
-            <div class="stat-label" data-key="stat_exp">Years Exp.</div>
-        </div>
-        <div class="card stat-card s2">
-            <div class="stat-value">50+</div>
-            <div class="stat-label" data-key="stat_projects">Projects</div>
-        </div>
-
-        <!-- Footer / Contact -->
-        <div class="card footer-card" id="contact">
-            <h2 data-key="footer_cta">Let's Build Something Robust</h2>
-            <div class="social-row">
-                <a href="#" class="social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="mailto:hooman.ghkhani@gmail.com" class="social-btn main-cta" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            </div>
-        </div>
-
-    </main>
-
-    <!-- Theme Toggle Fixed -->
-    <div class="floating-theme-toggle" id="theme-toggle" role="button" tabindex="0" aria-label="Toggle Dark Mode">
-        <i class="fas fa-moon"></i>
+        </main>
     </div>
 
     <script src="script.js"></script>
 </body>
-
 </html>

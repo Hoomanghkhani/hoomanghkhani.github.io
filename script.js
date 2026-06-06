@@ -1,129 +1,100 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* --- 1. Language Switcher Logic --- */
-    const langToggle = document.getElementById('lang-toggle');
-    const langMenu = document.getElementById('lang-menu');
-    const langItems = document.querySelectorAll('.lang-menu li');
-    const currentLangText = document.querySelector('.current-lang-text');
-    const currentLangFlag = document.querySelector('.lang-toggle .fi');
-    const body = document.body;
-
-    // Toggle Dropdown
-    langToggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        langMenu.classList.toggle('open');
-    });
-
-    // Close on Click Outside
-    document.addEventListener('click', () => {
-        langMenu.classList.remove('open');
-    });
-
-    // Translation Data
+    const langBtns = document.querySelectorAll('.lang-btn');
+    
     const translations = {
         en: {
-            hero_title: "Architecting <br> <span class='txt-gradient'>Scalable Systems</span>",
-            hero_bio: "SRE & Infrastructure Specialist with 5 years of experience maximizing system uptime and automation. Expert in Kubernetes, Docker, CI/CD, and enterprise network security.",
-            btn_contact: "Contact Me <i class='fas fa-arrow-right'></i>",
-            btn_resume: "Download CV <i class='fas fa-download'></i>",
-            stack_title: "Technologies",
+            title: "Site Reliability Engineer <br>& Infrastructure Architect",
+            tagline: "Engineering high-availability systems & zero-downtime deployments.",
+            about_title: "About Me",
+            about_desc: "SRE & Infrastructure Specialist with over 5 years of experience maximizing system uptime and automation in high-availability environments. Proven track record of architecting highly reliable infrastructure, optimizing CI/CD workflows, and reducing production downtime through proactive observability and Python-driven automation.",
             exp_title: "Experience",
-            job1_title: "Site Reliability Engineer (SRE)",
-            job1_desc: "Maintained 99.9% availability, migrated to K8s, Traefik, Gitlab CI/CD, Terraform & Ansible at Bontech.",
+            job1_title: "Lead Site Reliability Engineer (SRE)",
+            job1_desc: "Architecting highly available Kubernetes clusters and steering the migration of monolithic legacy services to robust microservice architectures. Engineering secure GitLab CI/CD pipelines to ensure automated, zero-downtime deployments. Developing advanced observability and alerting systems to proactively detect anomalies and drastically reduce MTTR, ensuring 99.9% uptime for core financial services.",
             job2_title: "DevOps & Infrastructure Engineer",
-            job2_desc: "Managed enterprise virtualized infrastructure using VMware ESXi, Veeam, and automated with Ansible at Arzsh Afaranan Koohestan.",
-            job3_title: "System Administrator / IT Specialist",
-            job3_desc: "Reduced monthly downtime by 60% via PM lifecycle and optimized backups via Python in Food Industry Sector.",
-            cert_title: "Certifications",
-            services_title: "What I Do",
-            stat_exp: "Years Exp.",
-            stat_projects: "Projects",
-            projects_title: "Projects",
-            project1_title: "Auto-scaling CI/CD on AWS",
-            project1_desc: "A Jenkins pipeline using spot instances to run builds, saving 60% on EC2 costs.",
-            project2_title: "K8s GitOps Platform",
-            project2_desc: "Built a developer platform on EKS with ArgoCD for seamless and secure deployments.",
-            footer_cta: "Let's Build Something Robust"
+            job2_desc: "Managed and optimized enterprise virtualized infrastructure using VMware ESXi for continuous uptime. Designed and maintained resilient backup and replication strategies utilizing Veeam to guarantee data integrity. Built high-performance NGINX reverse proxies for load distribution and automated complex system configurations using Ansible playbooks.",
+            job3_title: "Infrastructure Reliability Specialist",
+            job3_desc: "Spearheaded the design and execution of a strict Preventive Maintenance lifecycle, slashing monthly downtime by 60%. Engineered Python-based automation scripts for backup workflows, reducing execution time by 66% and saving hardware resources. Managed complex enterprise network infrastructures including cross-branch routing and Linux/Windows server ecosystems.",
+            skills_title: "Technical Arsenal",
+            cat_orch: "Orchestration & IaC",
+            cat_cicd: "CI/CD & Servers",
+            cat_net: "Networking & Security",
+            cat_obs: "Observability & Coding",
+            certs_title: "Certifications & Education",
+            cert_uni: "B.Sc. in ICT",
+            cert_uni_meta: "Shaheed Shamsipoor Technical College • GPA: 17.78/20",
+            cert_py: "Python Programming Certification",
+            footer_text: "© 2026 Hooman Ghardashkhani Niari. Architected with precision."
         },
         fa: {
-            hero_title: "معماری <br> <span class='txt-gradient'>سیستم‌های مقیاس‌پذیر</span>",
-            hero_bio: "متخصص SRE و زیرساخت با ۵ سال تجربه در به حداکثر رساندن آپتایم و اتوماسیون. متخصص در Kubernetes، Docker، CI/CD و امنیت شبکه‌های سازمانی.",
-            btn_contact: "تماس با من <i class='fas fa-arrow-left'></i>",
-            btn_resume: "دانلود رزومه <i class='fas fa-download'></i>",
-            stack_title: "تکنولوژی‌ها",
+            title: "مهندس قابلیت اطمینان سایت <br>و معمار زیرساخت",
+            tagline: "مهندسی سیستم‌های با دسترسی‌پذیری بالا و استقرارهای بدون قطعی.",
+            about_title: "درباره من",
+            about_desc: "متخصص SRE و زیرساخت با بیش از ۵ سال تجربه در به حداکثر رساندن آپتایم و اتوماسیون. دارای سابقه اثبات‌شده در معماری زیرساخت‌های بسیار پایدار، بهینه‌سازی CI/CD و کاهش زمان قطعی از طریق مانیتورینگ پیشگیرانه و اتوماسیون با پایتون.",
             exp_title: "تجربیات",
-            job1_title: "مهندس قابلیت اطمینان سایت (SRE)",
-            job1_desc: "حفظ ۹۹.۹٪ آپتایم، مهاجرت به K8s، Traefik، Gitlab CI/CD، Terraform و Ansible در بن‌تک.",
+            job1_title: "مهندس ارشد SRE",
+            job1_desc: "معماری کلاسترهای Kubernetes با دسترسی‌پذیری بالا و هدایت مهاجرت سرویس‌های یکپارچه به میکروسرویس. مهندسی خطوط لوله CI/CD گیت‌لب برای استقرارهای بدون قطعی. توسعه سیستم‌های مانیتورینگ و هشدار پیشرفته برای کاهش چشمگیر MTTR و تضمین آپتایم ۹۹.۹٪.",
             job2_title: "مهندس DevOps و زیرساخت",
-            job2_desc: "مدیریت زیرساخت مجازی‌سازی شده سازمانی با VMware ESXi، Veeam و اتوماسیون با Ansible در شرکت ارزش آفرینان کوهستان.",
-            job3_title: "مدیر سیستم / متخصص IT",
-            job3_desc: "کاهش ۶۰ درصدی قطعی ماهانه از طریق چرخه PM و بهینه‌سازی بک‌آپ‌ها با پایتون در بخش صنایع غذایی.",
-            cert_title: "گواهینامه‌ها",
-            services_title: "خدمات من",
-            stat_exp: "سال تجربه",
-            stat_projects: "پروژه",
-            projects_title: "پروژه‌ها",
-            project1_title: "CI/CD خودکار در AWS",
-            project1_desc: "یک خط لوله Jenkins با استفاده از spot instances برای اجرای buildها که ۶۰٪ در هزینه‌های EC2 صرفه‌جویی می‌کند.",
-            project2_title: "پلتفرم K8s GitOps",
-            project2_desc: "یک پلتفرم توسعه‌دهنده بر روی EKS با ArgoCD برای استقرارهای یکپارچه و امن ساخته شده است.",
-            footer_cta: "بیایید چیزی قدرتمند بسازیم"
+            job2_desc: "مدیریت و بهینه‌سازی زیرساخت مجازی سازمانی با VMware ESXi. طراحی استراتژی‌های بک‌آپ با Veeam. ایجاد پراکسی‌های معکوس NGINX برای توزیع بار و اتوماسیون تنظیمات پیچیده با Ansible.",
+            job3_title: "متخصص پایداری زیرساخت",
+            job3_desc: "طراحی و اجرای چرخه نگهداری پیشگیرانه (PM) و کاهش ۶۰ درصدی زمان قطعی. مهندسی اسکریپت‌های پایتون برای بک‌آپ و کاهش ۶۶ درصدی زمان اجرا. مدیریت شبکه‌های سازمانی و سرورهای لینوکس/ویندوز.",
+            skills_title: "زرادخانه فنی",
+            cat_orch: "ارکستریشن و IaC",
+            cat_cicd: "CI/CD و سرورها",
+            cat_net: "شبکه و امنیت",
+            cat_obs: "مانیتورینگ و برنامه‌نویسی",
+            certs_title: "مدارک و تحصیلات",
+            cert_uni: "کارشناسی مهندسی فناوری اطلاعات",
+            cert_uni_meta: "دانشکده فنی شهید شمسی‌پور • معدل: ۱۷.۷۸/۲۰",
+            cert_py: "گواهینامه برنامه‌نویسی پایتون",
+            footer_text: "© 2026 هومن قارداشخانی نیاری. با دقت معماری شده است."
         },
         de: {
-            hero_title: "Architekt <br> <span class='txt-gradient'>skalierbarer Systeme</span>",
-            hero_bio: "SRE- und Infrastruktur-Spezialist mit 5 Jahren Erfahrung in der Maximierung von Systemverfügbarkeit und Automatisierung. Experte für Kubernetes, Docker, CI/CD und Unternehmensnetzwerksicherheit.",
-            btn_contact: "Kontaktieren <i class='fas fa-arrow-right'></i>",
-            btn_resume: "CV herunterladen <i class='fas fa-download'></i>",
-            stack_title: "Technologien",
+            title: "Site Reliability Engineer <br>& Infrastruktur-Architekt",
+            tagline: "Entwicklung hochverfügbarer Systeme & Zero-Downtime-Deployments.",
+            about_title: "Über Mich",
+            about_desc: "SRE- und Infrastruktur-Spezialist mit über 5 Jahren Erfahrung in der Maximierung von Systemverfügbarkeit und Automatisierung. Nachweisbare Erfolge bei der Architektur hochzuverlässiger Infrastrukturen, Optimierung von CI/CD-Workflows und Reduzierung von Produktionsausfällen durch proaktive Observability.",
             exp_title: "Erfahrung",
-            job1_title: "Site Reliability Engineer (SRE)",
-            job1_desc: "Aufrechterhaltung von 99,9 % Verfügbarkeit, Migration zu K8s, Traefik, Gitlab CI/CD, Terraform & Ansible bei Bontech.",
+            job1_title: "Lead Site Reliability Engineer (SRE)",
+            job1_desc: "Architektur hochverfügbarer Kubernetes-Cluster und Steuerung der Migration von monolithischen Legacy-Diensten. Entwicklung sicherer GitLab CI/CD-Pipelines für automatisierte Zero-Downtime-Deployments. Entwicklung fortschrittlicher Observability- und Alerting-Systeme zur drastischen Reduzierung der MTTR (99,9 % Uptime).",
             job2_title: "DevOps & Infrastructure Engineer",
-            job2_desc: "Verwaltung der virtualisierten Unternehmensinfrastruktur mit VMware ESXi, Veeam und automatisiert mit Ansible bei Arzsh Afaranan Koohestan.",
-            job3_title: "Systemadministrator / IT-Spezialist",
-            job3_desc: "Reduzierung der monatlichen Ausfallzeiten um 60 % durch PM-Lebenszyklus und optimierte Backups via Python im Lebensmittelindustriesektor.",
-            cert_title: "Zertifizierungen",
-            services_title: "Was ich tue",
-            stat_exp: "Jahre Erf.",
-            stat_projects: "Projekte",
-            projects_title: "Projekte",
-            project1_title: "Auto-skalierende CI/CD auf AWS",
-            project1_desc: "Eine Jenkins-Pipeline, die Spot-Instanzen zur Ausführung von Builds verwendet und 60 % der EC2-Kosten einspart.",
-            project2_title: "K8s GitOps-Plattform",
-            project2_desc: "Aufbau einer Entwicklerplattform auf EKS mit ArgoCD für nahtlose und sichere Bereitstellungen.",
-            footer_cta: "Lass uns etwas Robustes bauen"
+            job2_desc: "Verwaltung und Optimierung der virtualisierten Unternehmensinfrastruktur mit VMware ESXi. Entwurf robuster Backup-Strategien mit Veeam. Aufbau leistungsstarker NGINX-Reverse-Proxys und Automatisierung komplexer Systemkonfigurationen mit Ansible.",
+            job3_title: "Infrastruktur-Zuverlässigkeitsspezialist",
+            job3_desc: "Leitung des Designs und der Ausführung eines strengen Preventive Maintenance-Lebenszyklus, wodurch monatliche Ausfallzeiten um 60 % gesenkt wurden. Entwicklung von Python-Automatisierungsskripten für Backups. Verwaltung komplexer Unternehmensnetzwerke und Linux/Windows-Server.",
+            skills_title: "Technisches Arsenal",
+            cat_orch: "Orchestrierung & IaC",
+            cat_cicd: "CI/CD & Server",
+            cat_net: "Netzwerk & Sicherheit",
+            cat_obs: "Observability & Programmierung",
+            certs_title: "Zertifizierungen & Bildung",
+            cert_uni: "B.Sc. in ICT",
+            cert_uni_meta: "Shaheed Shamsipoor Technical College • Notendurchschnitt: 17.78/20",
+            cert_py: "Python-Programmier-Zertifizierung",
+            footer_text: "© 2026 Hooman Ghardashkhani Niari. Mit Präzision architektoniert."
         }
     };
 
-    // Lang Selection Logic
-    langItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const lang = item.getAttribute('data-lang');
-            const flagClass = item.querySelector('.fi').className;
-            const menuText = item.textContent.trim();
+    langBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all
+            langBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked
+            btn.classList.add('active');
 
-            // Perform Update
-            updateLanguage(lang, flagClass, menuText);
+            const lang = btn.getAttribute('data-lang');
+            updateLanguage(lang);
         });
     });
 
-    function updateLanguage(lang, flagClass, text) {
-        // Update Button UI
-        currentLangText.textContent = text;
-        currentLangFlag.className = flagClass;
-
+    function updateLanguage(lang) {
         // Update Direction & HTML Lang
         if (lang === 'fa') {
             document.body.setAttribute('dir', 'rtl');
             document.documentElement.lang = 'fa';
-            // Swap arrow icons for RTL
-            const arrows = document.querySelectorAll('.fa-arrow-right');
-            arrows.forEach(a => { a.classList.remove('fa-arrow-right'); a.classList.add('fa-arrow-left'); });
         } else {
             document.body.setAttribute('dir', 'ltr');
             document.documentElement.lang = lang;
-            const arrows = document.querySelectorAll('.fa-arrow-left'); // Revert
-            arrows.forEach(a => { a.classList.remove('fa-arrow-left'); a.classList.add('fa-arrow-right'); });
         }
 
         // Translate Content
@@ -136,40 +107,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* --- 2. Scroll Animations (Intersection Observer) --- */
+    const fadeSections = document.querySelectorAll('.fade-in-section');
 
-    /* --- 2. Theme Toggle --- */
-    const themeBtn = document.getElementById('theme-toggle');
-    const themeIcon = themeBtn.querySelector('i');
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    };
 
-    // Load saved theme
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    body.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                // Optional: Unobserve after it becomes visible if you only want the animation once
+                // observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
 
-    themeBtn.addEventListener('click', () => {
-        const current = body.getAttribute('data-theme');
-        const next = current === 'dark' ? 'light' : 'dark';
-
-        body.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-        updateThemeIcon(next);
-    });
-
-    function updateThemeIcon(theme) {
-        if (theme === 'light') {
-            themeIcon.className = 'fas fa-sun';
-        } else {
-            themeIcon.className = 'fas fa-moon';
-        }
-    }
-
-
-    /* --- 3. 3D Cube Spin Interactive --- */
-    const cube = document.querySelector('.cube-wrapper');
-    document.addEventListener('mousemove', (e) => {
-        const x = (window.innerWidth / 2 - e.pageX) / 20;
-        const y = (window.innerHeight / 2 - e.pageY) / 20;
-        cube.style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
+    fadeSections.forEach(section => {
+        sectionObserver.observe(section);
     });
 
 });
